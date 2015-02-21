@@ -1,0 +1,9 @@
+exec: {}
+in:
+    type: file
+    paths: [shogun.csv]
+out:
+    type: jubatus_classifier
+    host: 127.0.0.1
+    port: 9199
+    name: sandbox
