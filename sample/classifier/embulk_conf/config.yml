@@ -1,7 +1,7 @@
 exec: {}
 in:
     type: file
-    paths: [shogun.csv]
+    paths: [train.csv]
 out:
     type: jubatus_classifier
     host: 127.0.0.1

@@ -27,13 +27,14 @@ module Embulk
     end 
 
     def add(page)
+      train_data = Array.new
       page.each do |record|
         key = record.shift
         hash = Hash[record]
-        train_data = [key, Jubatus::Common::Datum.new(hash)]
-        train_data.sort_by{rand}
-        @juba.train(train_data)
+        train_data.push([key, ::Jubatus::Common::Datum.new(hash)])
       end 
+      train_data.sort_by{rand}
+      @juba.train(train_data)
     end 
 
     def finish
